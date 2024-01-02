@@ -1,8 +1,16 @@
 import './App.css';
 import freeCodeCampLogo from './imagenes/freecodecamp-logo.png';
-// freeCodeCampLogo es el nombre que le doy a la variable que contiene a la imagen importada.
+import Boton from './componentes/Boton';
 
 function App() {
+  const manejarClic = () => {
+    console.log('Click');
+  }
+
+  const reiniciarContador = () => {
+    console.log('Reiniciar');
+  }
+
   return (
     <div className='App'>
       <div className='freecodecamp-logo-contenedor'>
@@ -10,6 +18,18 @@ function App() {
           className='freecodecamp-logo'
           src={freeCodeCampLogo}
           alt='Logo de freeCodeCamp'
+        />
+      </div>
+      <div className='contenedor-principal'>
+        <Boton 
+          texto='Click'
+          esBotonDeClic={true}
+          manejarClic={manejarClic}
+        />
+        <Boton 
+          texto='Reiniciar'
+          esBotonDeClic={false}
+          manejarClic={reiniciarContador}
         />
       </div>
     </div>
